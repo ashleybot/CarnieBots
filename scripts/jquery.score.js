@@ -8,10 +8,14 @@ var balloonPoints = {
 
 $(document).ready(function(){
   $(".balloon").click(function(){
-    var balloon = $(this);
-    var src = balloon.attr('src');
-    var color = getColor(src);
-    
-    $("#scoreboard").append("<p>" + color + " balloon popped " + balloonPoints[color] + " points.</p>");
+
   });
 });
+
+function addScore(balloonState, color)
+{
+    
+    if (balloonState == 0){
+      $("#scoreboard").append("<p>" + color + " balloon popped " + balloonPoints[color] + " points.</p>");
+    }
+}

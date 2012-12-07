@@ -4,9 +4,9 @@ $(document).ready(function(){
       var balloon = $(this);
       var src = balloon.attr('src');
       var color = getColor(src);
-      var balloonIndex = getIndex(src);
+      var balloonState = getIndex(src);
       
-      if (balloonIndex == 0){
+      if (balloonState == 0){
         var i = 0, max = 3;
         var slowloop = function (){
           if (i++ < max){
@@ -15,6 +15,7 @@ $(document).ready(function(){
           }
         };
         slowloop();
+        addScore(balloonState, color);
       }
   });
 });
