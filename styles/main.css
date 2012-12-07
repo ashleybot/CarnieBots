@@ -1,0 +1,16 @@
+#scoreboard{
+  height: 200px;
+  border: 1px solid #ddd;
+  padding: 5px;
+  width: 300px;
+  overflow: scroll;
+}
+
+#total{
+  height: 60px;
+  width: 300px;
+  background-color: #000;
+  color: #fff;
+  font-size: 40pt;
+  text-align: right;
+}

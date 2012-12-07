@@ -14,8 +14,13 @@ $(document).ready(function(){
 
 function addScore(balloonState, color)
 {
+  if (balloonState == 0){
+    $("#scoreboard").append("<p>" + color + " balloon popped " + balloonPoints[color] + " points.</p>");
+    var totalDiv = $("#total");
+    var totalScore = parseInt(totalDiv.text());
+    totalScore += balloonPoints[color];
     
-    if (balloonState == 0){
-      $("#scoreboard").append("<p>" + color + " balloon popped " + balloonPoints[color] + " points.</p>");
-    }
+    totalDiv.text(totalScore);
+    console.log(totalScore);
+  }
 }
