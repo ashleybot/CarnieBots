@@ -1,7 +1,7 @@
 $(document).ready(function(){
-  $("#controlpanel").sortable({
-      stop: function( event, ui ) { console.log(ui.item);}
+  $("#modules").sortable({
+      stop: function( event, ui ) { console.log(ui.item[0]);}
   });
-  $("#controlpanel").disableSelection();
-  $(".droppable").disableSelection();
+  $("#modules, .droppable").disableSelection();
+  //$(".droppable").disableSelection();
 });

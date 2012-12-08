@@ -15,6 +15,30 @@
   text-align: right;
 }
 
-#controlpanel{
+#controlpaneleasy{
+  background: url("../images/backgrounds/controlpanel_easy.png") no-repeat;
+  height: 800px;
+}
+
+#controlpanelhard{
+  background: url("../images/backgrounds/controlpanel_hard.png") no-repeat;
+  height: 800px;
+}
+
+#modules{
+  position: relative;
+  top: 195px;
+  left: 553px;
   width: 150px;
+  padding: 0px;
+  margin: 0px;
+}
+
+#modules li{
+  list-style: none;
+  padding: 8px;
+}
+
+#controlpanelhard #modules li{
+  padding: 0px;
 }
