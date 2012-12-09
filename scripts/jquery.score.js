@@ -1,5 +1,6 @@
 
 $(document).ready(function(){
+
   var balloonPoints;
   if (balloonPoints == null) {
     initializeScores();
@@ -10,17 +11,30 @@ $(document).ready(function(){
 });
 
 function initializeScores(){
-  balloonPoints = {
-    "blue":1,
-    "green":2,
-    "orange":3,
-    "pink":4,
-    "red":5
-  };
+  var scoreCookie = document.cookie["CarnieBotScore"];
+  if (scoreCookie == null){
+    balloonPoints = {
+      "blue":1,
+      "green":2,
+      "orange":3,
+      "pink":4,
+      "red":5
+    };
+    
+    $.JSONCookie("CarnieBotScore", balloonPoints, {path: '/'});  
+  }
+  var o = $.JSONCookie("CarnieBotScore");
+  console.log(JSON.stringify(o));
+
 }
 
-function setScores(firstItem, secondItem){
-  
+function setScores(movedItem){
+  console.log(movedItem);
+  $.cookie('the_cookie', 'the_value');
+  $.JSONCookie("CarnieBotScore", balloonPoints, {path: '/'}); 
+  console.log(document.cookie["CarnieBotScore"]);
+  var o = $.JSONCookie("CarnieBotScore");
+  console.log(JSON.stringify(o)); 
 }
 
 function addScore(balloonState, color)
