@@ -37,6 +37,12 @@ function getColor(src){
   else if(src.indexOf("red") >= 0){
     color = "red";
   }
+  else if(src.indexOf("yellow") >= 0){
+    color = "yellow";
+  }
+  else{
+    color = "";
+  }
   return color;
 }
 
