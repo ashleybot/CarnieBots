@@ -42,3 +42,13 @@
 #controlpanelhard #modules li{
   padding: 0px;
 }
+
+.tryitbutton {
+  background: url("../images/buttons/try_it.png") no-repeat;
+  width: 183px;
+  height: 100px;
+  display: block;
+  position: absolute;
+  top: 550px;
+  left: 500px;
+}
