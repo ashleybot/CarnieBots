@@ -1,0 +1,76 @@
+img {
+  margin: 0px;
+}
+
+.gamePiece {
+  position: absolute;
+}
+
+#pageContainer {
+  position: relative;
+}
+
+#gameBoardTop {
+  top: 200px;
+  left: 100px;
+  z-index: 100;
+}
+
+#gameBoardMiddle {
+  top: 314px;
+  left: 100px;
+  z-index: 300;
+}
+
+#gameBoardBottom {
+  top: 380px;
+  left: 100px;
+  z-index: 500
+}
+
+.topRowMole {
+  z-index: 200;
+}
+
+.bottomRowMole {
+  z-index: 400;
+}
+
+.topRowMoleOut {
+  top: 60px;
+}
+
+.topRowMoleIn {
+  top: 320px;
+}
+
+.bottomRowMoleOut {
+  top: 130px;
+}
+
+.bottomRowMoleIn {
+  top: 390px;
+}
+
+.mole {
+}
+
+#mole1 {
+  left: 270px;
+}
+
+#mole2 {
+  left: 460px;
+}
+
+#mole3 {
+  left: 620px;
+}
+
+#mole4 {
+  left: 820px;
+}
+
+#mole5 {
+  left: 955px;
+}
