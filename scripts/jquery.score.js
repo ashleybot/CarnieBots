@@ -13,6 +13,15 @@ $(document).ready(function(){
 
 });
 
+// set all cookies to default states
+function clearBalloonScores(){
+  $.cookie("CarnieBotBalloonLevel", "easy");
+  var balloonPointsEasy = {"red":"two", "yellow":"one", "blue":"three"};
+  var balloonPointsHard = {"red":"two", "pink":"one", "orange":"three", "green":"four"};
+  $.JSONCookie("CarnieBotScoreEasy", balloonPointsEasy, {path: '/'}); 
+  $.JSONCookie("CarnieBotScoreHard", balloonPointsHard, {path: '/'}); 
+}
+
 // which level are we on? Easy or hard?
 // gets and sets (if necessary)
 function currentLevel() {

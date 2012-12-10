@@ -4,8 +4,39 @@
 		<meta charset="utf-8" />
 		<title>gameQuery shim</title>
 		<script language="JavaScript" type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
+		<script language="JavaScript" type="text/javascript" src="scripts/plugins/json2.js"></script>
+		<script language="JavaScript" type="text/javascript" src="scripts/plugins/jquery.cookie.js"></script>
+		<script language="JavaScript" type="text/javascript" src="scripts/plugins/jquery.jsoncookie.js"></script>
+		<script language="JavaScript" type="text/javascript" src="scripts/jquery.score.js"></script>
+		<script>
+		  $(document).ready(function(){
+  		  
+  		  // New game link
+  		  $("#new").click(function (){
+    		  clearBalloonScores();
+    		  window.location.href = "balloon.html";
+  		  });
+  		  
+  		  // Existing game link
+  		  // figure out where to go based on players progress
+  		  $("#existing").click(function(){
+    		  window.location.href = "balloon.html";
+  		  });
+		  });
+		</script>
 	</head>
 	<body>
+	<h2>Welcome to CarnieBots</h2>
+	<ul>
+	 <li><a id="existing">Existing Game</a></li>
+	 <li><a id="new">New Game</a></li>
+	</ul>
+	
+	
+	
+	
+	
+	<h2>Admin</h2>
 	 <ul>
 	   <li>
 	     <a href="jquerytest.html">jQuery Test</a>
