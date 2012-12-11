@@ -1,12 +1,16 @@
 $(document).ready(function(){
+      var snd = new Audio("/audio/Pop.mp3"); // buffers automatically when created
+
   $(".balloon").click(function(){
-  
+    
       var balloon = $(this);
       var src = balloon.attr('src');
       var color = getColor(src);
       var balloonState = getIndex(src);
       
       if (balloonState == 0){
+        snd.currentTime = 0;
+        snd.play();
         var i = 0, max = 3;
         var slowloop = function (){
           if (i++ < max){
@@ -56,7 +60,7 @@ function getIndex(src){
 
 function changeState(balloon, color, index){
   // maybe more realistic without fading?
-  balloon.attr('src', "images/" + color + "balloon/" + index + ".png");
+  balloon.attr('src', "/images/" + color + "balloon/" + index + ".png");
   /*balloon.fadeOut('fast', function () {
     balloon.attr('src', "images/" + color + "balloon/" + index + ".png");
 

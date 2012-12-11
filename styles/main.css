@@ -6,6 +6,17 @@
   overflow: scroll;
 }
 
+#pegboardeasy{
+  background: url("/images/backgrounds/pegboard_easy.png") no-repeat;
+  background-size: 800px;
+  height: 800px;
+  width: 800px;
+}
+
+#pegboardhard{
+  background: url("/images/backgrounds/pegboard_hard.png") no-repeat;
+}
+
 #total{
   height: 60px;
   width: 300px;
@@ -52,4 +63,12 @@
   top: 550px;
   left: 500px;
   
+}
+
+.fixitbutton {
+  background: url("/images/buttons/fix_it.png") no-repeat;
+  width: 183px;
+  height: 100px;
+  display: block;
+  position: absolute;
 }

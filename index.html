@@ -14,13 +14,13 @@
   		  // New game link
   		  $("#new").click(function (){
     		  clearBalloonScores();
-    		  window.location.href = "balloon.html";
+    		  window.location.href = "game/index.html";
   		  });
   		  
   		  // Existing game link
   		  // figure out where to go based on players progress
   		  $("#existing").click(function(){
-    		  window.location.href = "balloon.html";
+    		  window.location.href = "game/index.html";
   		  });
 		  });
 		</script>
@@ -28,13 +28,28 @@
 	<body>
 	<h2>Welcome to CarnieBots</h2>
 	<ul>
-	 <li><a id="existing">Existing Game</a></li>
-	 <li><a id="new">New Game</a></li>
+	 <li><a id="existing" href="#">Existing Game</a></li>
+	 <li><a id="new" href="#">New Game</a></li>
 	</ul>
 	
 	
 	
-	
+	<h2>Sounds</h2>
+	Chipmunk
+	<audio controls>
+    <source src="audio/Chipmunk.mp3" type="audio/mpeg">
+  </audio>
+  <br />
+  Boing
+	<audio controls>
+    <source src="audio/Boing.mp3" type="audio/mpeg">
+  </audio>
+  <br />
+  Pop
+	<audio controls>
+    <source src="audio/Pop.mp3" type="audio/mpeg">
+  </audio>
+  
 	
 	<h2>Admin</h2>
 	 <ul>
