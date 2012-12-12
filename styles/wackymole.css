@@ -11,20 +11,20 @@
 /* Game board */
 
 #gameBoardTop {
-  top: 400px;
-  left: 100px;
+  top: 50px;
+  left: -40px;
   z-index: 100;
 }
 
 #gameBoardMiddle {
-  top: 514px;
-  left: 100px;
+  top: 598px;
+  left: -34px;
   z-index: 300;
 }
 
 #gameBoardBottom {
-  top: 580px;
-  left: 100px;
+  top: 774px;
+  left: -38px;
   z-index: 500
 }
 
@@ -32,7 +32,7 @@
 
 .mallet {
   top: 50px;
-  left: 1100px;
+  left: 1200px;
   z-index: 100;
 }
 
@@ -45,25 +45,25 @@
 }
 
 .topRowWhack {
-  top: -20px;
+  top: -150px;
   z-index: 150;
 }
 
 .bottomRowWhack {
-  top: 70px;
+  top: 30px;
   z-index: 350;
 }
 
 .mallet0 {
-  left: 360px;
+  left: 140px;
 }
 
 .mallet1 {
-  left: 530px;
+  left: 410px;
 }
 
 .mallet2 {
-  left: 690px;
+  left: 610px;
 }
 
 .mallet3 {
@@ -71,7 +71,7 @@
 }
 
 .mallet4 {
-  left: 1030px;
+  left: 1090px;
 }
 
 .malletRotated {
@@ -82,40 +82,40 @@
 /* Moles */
 
 .topRowMoleOut {
-  top: 260px;
+  top: 253px;
 }
 
 .topRowMoleIn {
-  top: 520px;
+  top: 628px;
 }
 
 .bottomRowMoleOut {
-  top: 330px;
+  top: 433px;
 }
 
 .bottomRowMoleIn {
-  top: 590px;
+  top: 828px;
 }
 
 .mole {
 }
 
 #mole1 {
-  left: 270px;
+  left: 110px;
 }
 
 #mole2 {
-  left: 460px;
+  left: 380px;
 }
 
 #mole3 {
-  left: 620px;
+  left: 580px;
 }
 
 #mole4 {
-  left: 820px;
+  left: 855px;
 }
 
 #mole5 {
-  left: 955px;
+  left: 1045px;
 }
