@@ -1,8 +1,9 @@
-var speechBubbleMax = 13;
+var speechBubbleMax = 8;
 var speechBubblePosition = 1;
 $(document).ready(function(){
-      var snd = new Audio("/audio/Pop.mp3"); // buffers automatically when created
-
+  $("#tryItButton").css('visibility', 'hidden');
+  $("#backButton").css('visiblity', 'hidden');
+  
   $(".balloon").click(function(){
     
       var balloon = $(this);
@@ -11,8 +12,6 @@ $(document).ready(function(){
       var balloonState = getIndex(src);
       
       if (balloonState == 0){
-        snd.currentTime = 0;
-        snd.play();
         var i = 0, max = 3;
         var slowloop = function (){
           if (i++ < max){
@@ -27,10 +26,27 @@ $(document).ready(function(){
   
   $(".speechNext").click(function(){
     var top = -200 * speechBubblePosition;
+    if (speechBubblePosition > 1){
+      $("#tryItButton").css('visibility', 'hidden');
+      $("#backButton").css('visiblity', 'visible');
+    }
     if (speechBubblePosition < speechBubbleMax){
       speechBubblePosition++;
     }
+    else{
+      $("#tryItButton").css('visibility', 'visible');
+      $("#backButton").css('visiblity', 'hidden');
+    }
     $(".speechBubbles").css("background","url('/images/characters/BalloonDartsSpeechBubbles.png') 0 " + top + "px");
+  });
+  
+  $(".speechBack").click(function(){
+    if (speechBubblePosition > 1){
+      speechBubblePosition--;
+    }
+    var top = -200 * speechBubblePosition;
+    $(".speechBubbles").css("background","url('/images/characters/BalloonDartsSpeechBubbles.png') 0 " + top + "px");
+    console.log("back");
   });
 });
 

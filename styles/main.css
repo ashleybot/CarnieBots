@@ -8,6 +8,21 @@ img.speechBubbles{
   height: 200px;
 }
 
+.speechNext{
+ background: url("/images/buttons/next.png") 0 0; 
+ width: 171px;
+ height: 139px;
+ display:block;
+ float: left;
+}
+
+.speechBack{
+ background: url("/images/buttons/back.png") 0 0;
+ width: 171px;
+ height: 139px;
+ display: block;
+}
+
 #scoreboard{
   height: 200px;
   border: 1px solid #ddd;
@@ -19,7 +34,7 @@ img.speechBubbles{
 #pegboardeasy{
   background: url("/images/backgrounds/pegboard_easy.png") no-repeat;
   background-size: 800px;
-  height: 800px;
+  height: 460px;
   width: 800px;
 }
 

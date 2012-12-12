@@ -4,22 +4,44 @@
 		<meta charset="utf-8" />
 		<title>Level 1.5</title>
 		
+		<link href="/styles/main.css" rel="stylesheet" />
+		
 		<script language="JavaScript" type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
-		<script language="JavaScript" type="text/javascript" src="scripts/plugins/json2.js"></script>
-		<script language="JavaScript" type="text/javascript" src="scripts/plugins/jquery.cookie.js"></script>
-		<script language="JavaScript" type="text/javascript" src="scripts/plugins/jquery.jsoncookie.js"></script>
-		<script language="JavaScript" type="text/javascript" src="scripts/jquery.score.js"></script>
+    <script language="JavaScript" type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+		<script language="JavaScript" type="text/javascript" src="/scripts/plugins/json2.js"></script>
+		<script language="JavaScript" type="text/javascript" src="/scripts/plugins/jquery.cookie.js"></script>
+		<script language="JavaScript" type="text/javascript" src="/scripts/plugins/jquery.jsoncookie.js"></script>
+		<script language="JavaScript" type="text/javascript" src="/scripts/jquery.score.js"></script>
+		<script language="JavaScript" type="text/javascript" src="/scripts/jquery.controlpanel.js"></script>
 	</head>
 	<body>
-  	<h2>Ba-Loon-ey Darts!</h2> 
+	 <div id="controlpanelhard">
+  	 <ul id="modules">
+  	   <li id="two" class="droppable">
+  	     <img class="draggable point_2" src="/images/module/module_2.png" />
+  	   </li>
+  	   <li id="one" class="droppable">
+  	     <img class="draggable point_1" src="/images/module/module_1.png" />
+  	   </li>
+  	   <li id="three" class="droppable">
+  	     <img class="draggable point_3" src="/images/module/module_3.png" />
+  	   </li>
+  	   <li id="four" class="droppable">
+  	     <img class="draggable point_4" src="/images/module/module_4.png" />
+  	   </li>
+  	 </ul>
+  	 <a class="tryitbutton" href="level_1.4.html"></a>
+	 </div>
+	 	 <div>
+	     	<img style="position:absolute;top:400px;left:900px;" src="/images/characters/sam_the_sad_robot.png" />
   	
-  	<p>This is the harder control panel
-  	</p>
-  	
-  	<p>
-  	 <a href="level_1.4.html">Try it!</a>
-  	 <br />
-  	 Don't tell the player they fixed it until after they've gone back to the dart board.
-  	</p>
+    	<div style="position:absolute;top:20px;left:900px;">
+    	 <img class="speechBubbles" />
+    	 <div style="width:400px;">
+      	 <a id="backButton" class="speechBack" href="#"></a>
+      	 <a id="nextButton" class="speechNext" style="position:relative;top:-135px;left:180px;" href="#"></a>
+    	 </div>
+    	</div>
+	 </div>
 	</body>
 </html>

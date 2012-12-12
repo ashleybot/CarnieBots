@@ -4,7 +4,7 @@
 		<meta charset="utf-8" />
 		<title>Level 1.0</title>
 		
-		<link href="../styles/main.css" rel="stylesheet" />
+		<link href="/styles/main.css" rel="stylesheet" />
 		
 		<script language="JavaScript" type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
 		<script language="JavaScript" type="text/javascript" src="/scripts/plugins/json2.js"></script>
@@ -19,15 +19,12 @@
   	
   	<div style="position:absolute;top:20px;left:300px;">
   	 <img class="speechBubbles" />
-  	 <a class="speechBack" href="#">Back</a>
-  	 <a class="speechNext" href="#">Next</a>
+  	 <div style="width:400px;">
+    	 <a id="backButton" class="speechBack" href="#"></a>
+    	 <a id="nextButton" class="speechNext" style="position:relative;top:-135px;left:180px;" href="#"></a>
+  	 </div>
   	</div>
-  	<p>This is where the robot is who tells us what is wrong with the dart game!</p>
+  	<a id="tryItButton" class="tryitbutton" href="level_1.1.html"></a>
   	
-  	<p>Buttons for going through all the speech bubbles and back</p>
-  	
-  	<p>
-  	 <a href="level_1.1.html">Try it!</a>
-  	</p>
 	</body>
 </html>

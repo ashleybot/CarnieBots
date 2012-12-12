@@ -4,21 +4,27 @@
 		<meta charset="utf-8" />
 		<title>Level 1.3</title>
 		
+		<link href="/styles/main.css" rel="stylesheet" />
+		
 		<script language="JavaScript" type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
-		<script language="JavaScript" type="text/javascript" src="scripts/plugins/json2.js"></script>
-		<script language="JavaScript" type="text/javascript" src="scripts/plugins/jquery.cookie.js"></script>
-		<script language="JavaScript" type="text/javascript" src="scripts/plugins/jquery.jsoncookie.js"></script>
-		<script language="JavaScript" type="text/javascript" src="scripts/jquery.score.js"></script>
+		<script language="JavaScript" type="text/javascript" src="/scripts/plugins/json2.js"></script>
+		<script language="JavaScript" type="text/javascript" src="/scripts/plugins/jquery.cookie.js"></script>
+		<script language="JavaScript" type="text/javascript" src="/scripts/plugins/jquery.jsoncookie.js"></script>
+		<script language="JavaScript" type="text/javascript" src="/scripts/jquery.score.js"></script>
+		<script language="JavaScript" type="text/javascript" src="/scripts/jquery.balloon.js"></script>
 	</head>
-	<body>
+	<body id="balloonDarts">
   	<h2>Ba-Loon-ey Darts!</h2> 
+  	<img src="/images/characters/sam_the_sad_robot.png" />
   	
-  	<p>This is where the robot comes back and he is sparking and fizzing - he's broken because there are more balloon
-    	colors to be considered
-  	</p>
+  	<div style="position:absolute;top:20px;left:300px;">
+  	 <img class="speechBubbles" />
+  	 <div style="width:400px;">
+    	 <a id="backButton" class="speechBack" href="#"></a>
+    	 <a id="nextButton" class="speechNext" style="position:relative;top:-135px;left:180px;" href="#"></a>
+  	 </div>
+  	</div>
+  	<a id="tryItButton" class="tryitbutton" href="level_1.4.html"></a>
   	
-  	<p>
-  	 <a href="level_1.4.html">Try it!</a>
-  	</p>
 	</body>
 </html>

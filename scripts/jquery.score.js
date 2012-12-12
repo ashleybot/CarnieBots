@@ -22,6 +22,12 @@ function clearBalloonScores(){
   $.JSONCookie("CarnieBotScoreHard", balloonPointsHard, {path: '/'}); 
 }
 
+function resetCompletedLevels(){
+  $.cookie("CarnieBotEasyLevelCompleted","false", {path: '/game'});
+  $.cookie("CarnieBotHardLevelCompleted","false", {path: '/game'});
+  console.log("reset");
+}
+
 // which level are we on? Easy or hard?
 // gets and sets (if necessary)
 function currentLevel() {
@@ -31,7 +37,7 @@ function currentLevel() {
     level = "easy";
   }
   // also test if the user is on the hard control panel, and then set it to upgrade
-  if (document.URL.indexOf("hard") >= 0){
+  if ((document.URL.indexOf("hard") >= 0) || (document.URL.indexOf("level_1.4") >= 0)){
     level = "hard";
   }
   $.cookie("CarnieBotBalloonLevel", level);

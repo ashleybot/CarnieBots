@@ -4,16 +4,17 @@
 		<meta charset="utf-8" />
 		<title>gameQuery shim</title>
 		<script language="JavaScript" type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
-		<script language="JavaScript" type="text/javascript" src="scripts/plugins/json2.js"></script>
-		<script language="JavaScript" type="text/javascript" src="scripts/plugins/jquery.cookie.js"></script>
-		<script language="JavaScript" type="text/javascript" src="scripts/plugins/jquery.jsoncookie.js"></script>
-		<script language="JavaScript" type="text/javascript" src="scripts/jquery.score.js"></script>
+		<script language="JavaScript" type="text/javascript" src="/scripts/plugins/json2.js"></script>
+		<script language="JavaScript" type="text/javascript" src="/scripts/plugins/jquery.cookie.js"></script>
+		<script language="JavaScript" type="text/javascript" src="/scripts/plugins/jquery.jsoncookie.js"></script>
+		<script language="JavaScript" type="text/javascript" src="/scripts/jquery.score.js"></script>
 		<script>
 		  $(document).ready(function(){
   		  
   		  // New game link
   		  $("#new").click(function (){
     		  clearBalloonScores();
+    		  resetCompletedLevels();
     		  window.location.href = "game/index.html";
   		  });
   		  
