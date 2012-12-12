@@ -4,15 +4,24 @@
 		<meta charset="utf-8" />
 		<title>Level 1.0</title>
 		
+		<link href="../styles/main.css" rel="stylesheet" />
+		
 		<script language="JavaScript" type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
-		<script language="JavaScript" type="text/javascript" src="scripts/plugins/json2.js"></script>
-		<script language="JavaScript" type="text/javascript" src="scripts/plugins/jquery.cookie.js"></script>
-		<script language="JavaScript" type="text/javascript" src="scripts/plugins/jquery.jsoncookie.js"></script>
-		<script language="JavaScript" type="text/javascript" src="scripts/jquery.score.js"></script>
+		<script language="JavaScript" type="text/javascript" src="/scripts/plugins/json2.js"></script>
+		<script language="JavaScript" type="text/javascript" src="/scripts/plugins/jquery.cookie.js"></script>
+		<script language="JavaScript" type="text/javascript" src="/scripts/plugins/jquery.jsoncookie.js"></script>
+		<script language="JavaScript" type="text/javascript" src="/scripts/jquery.score.js"></script>
+		<script language="JavaScript" type="text/javascript" src="/scripts/jquery.balloon.js"></script>
 	</head>
-	<body>
+	<body id="balloonDarts">
   	<h2>Ba-Loon-ey Darts!</h2> 
+  	<img src="/images/characters/sam_the_sad_robot.png" />
   	
+  	<div style="position:absolute;top:20px;left:300px;">
+  	 <img class="speechBubbles" />
+  	 <a class="speechBack" href="#">Back</a>
+  	 <a class="speechNext" href="#">Next</a>
+  	</div>
   	<p>This is where the robot is who tells us what is wrong with the dart game!</p>
   	
   	<p>Buttons for going through all the speech bubbles and back</p>
