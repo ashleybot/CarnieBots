@@ -1,3 +1,5 @@
+var speechBubbleMax = 13;
+var speechBubblePosition = 1;
 $(document).ready(function(){
       var snd = new Audio("/audio/Pop.mp3"); // buffers automatically when created
 
@@ -21,6 +23,14 @@ $(document).ready(function(){
         slowloop();
         addScore(balloonState, color);
       }
+  });
+  
+  $(".speechNext").click(function(){
+    var top = -200 * speechBubblePosition;
+    if (speechBubblePosition < speechBubbleMax){
+      speechBubblePosition++;
+    }
+    $(".speechBubbles").css("background","url('/images/characters/BalloonDartsSpeechBubbles.png') 0 " + top + "px");
   });
 });
 
