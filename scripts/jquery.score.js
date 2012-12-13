@@ -15,11 +15,11 @@ $(document).ready(function(){
 
 // set all cookies to default states
 function clearBalloonScores(){
-  $.cookie("CarnieBotBalloonLevel", "easy");
+  $.cookie("CarnieBotBalloonLevel", "easy", {path: '/game'});
   var balloonPointsEasy = {"red":"two", "yellow":"one", "blue":"three"};
   var balloonPointsHard = {"red":"two", "pink":"one", "orange":"three", "green":"four"};
-  $.JSONCookie("CarnieBotScoreEasy", balloonPointsEasy, {path: '/'}); 
-  $.JSONCookie("CarnieBotScoreHard", balloonPointsHard, {path: '/'}); 
+  $.JSONCookie("CarnieBotScoreEasy", balloonPointsEasy, {path: '/game'}); 
+  $.JSONCookie("CarnieBotScoreHard", balloonPointsHard, {path: '/game'}); 
 }
 
 function resetCompletedLevels(){
@@ -40,7 +40,7 @@ function currentLevel() {
   if ((document.URL.indexOf("hard") >= 0) || (document.URL.indexOf("level_1.4") >= 0)){
     level = "hard";
   }
-  $.cookie("CarnieBotBalloonLevel", level);
+  $.cookie("CarnieBotBalloonLevel", level, {path: '/game'});
   return level;
 }
 

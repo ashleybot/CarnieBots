@@ -21,7 +21,7 @@ function checkWin(arrayOfItems){
     // win state = ["one", "three", "two"]
     if (arrayOfItems.toString() == ["one","three","two"].toString()){
       console.log("win");
-      $.cookie("CarnieBotEasyLevelCompleted","true");
+      $.cookie("CarnieBotEasyLevelCompleted","true", {path: '/game'});
     }
   }
   else if (arrayOfItems.length == 4){
@@ -29,7 +29,7 @@ function checkWin(arrayOfItems){
     // win state = ["four", "two", "one", "three"]
     if (arrayOfItems.toString() == ["four", "two", "one", "three"].toString()){
       console.log("win");
-      $.cookie("CarnieBotHardLevelCompleted","true");
+      $.cookie("CarnieBotHardLevelCompleted","true", {path: '/game'});
     }
 
   }
