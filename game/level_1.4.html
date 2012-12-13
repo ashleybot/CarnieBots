@@ -4,23 +4,67 @@
 		<meta charset="utf-8" />
 		<title>Level 1.4</title>
 		
+		<link href="/styles/main.css" rel="stylesheet" />
+		
 		<script language="JavaScript" type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
-		<script language="JavaScript" type="text/javascript" src="scripts/plugins/json2.js"></script>
-		<script language="JavaScript" type="text/javascript" src="scripts/plugins/jquery.cookie.js"></script>
-		<script language="JavaScript" type="text/javascript" src="scripts/plugins/jquery.jsoncookie.js"></script>
-		<script language="JavaScript" type="text/javascript" src="scripts/jquery.score.js"></script>
+		<script language="JavaScript" type="text/javascript" src="/scripts/plugins/json2.js"></script>
+		<script language="JavaScript" type="text/javascript" src="/scripts/plugins/jquery.cookie.js"></script>
+		<script language="JavaScript" type="text/javascript" src="/scripts/plugins/jquery.jsoncookie.js"></script>
+		<script language="JavaScript" type="text/javascript" src="/scripts/jquery.score.js"></script>
+		<script language="JavaScript" type="text/javascript" src="/scripts/jquery.balloon.js"></script>
+		<script language="JavaScript" type="text/javascript" src="/scripts/jquery.controlpanel.js"></script>
+		<script>
+		  $(document).ready(function (){
+  		  if (isWin("hard") == "true"){
+    		  var fixItButton = $(".fixitbutton");
+    		  fixItButton.attr('class','speechNext');
+    		  fixItButton.attr('href', "/wackymole.html");
+    		  alert("You fixed it! Yay! Click next to continue.");
+  		  }
+		  });
+		</script>
 	</head>
-	<body>
+	<body id="balloonDarts">
   	<h2>Ba-Loon-ey Darts!</h2> 
   	
-  	<p>This is the harder play dart board
-  	</p>
+  	<p>Click the balloons and see what happens!</p>
+
+  	<div id="pegboardeasy">
+      <img class="balloon" style="position:absolute;top:380px;left:650px;" src="/images/pinkballoon/0.png" />
+      <img class="balloon" style="position:absolute;top:380px;left:450px;" src="/images/redballoon/0.png" />
+      <img class="balloon" style="position:absolute;top:380px;left:250px;" src="/images/orangeballoon/0.png" />
+      <img class="balloon" style="position:absolute;top:380px;left:50px;" src="/images/greenballoon/0.png" />
+      
+      <img class="balloon" style="position:absolute;top:290px;left:350px;" src="/images/greenballoon/0.png" />
+      <img class="balloon" style="position:absolute;top:280px;left:500px;" src="/images/orangeballoon/0.png" />
+      <img class="balloon" style="position:absolute;top:280px;left:150px;" src="/images/redballoon/0.png" />
+      <img class="balloon" style="position:absolute;top:230px;left:650px;" src="/images/pinkballoon/0.png" />
+    
+      <img class="balloon" style="position:absolute;top:180px;left:50px;" src="/images/redballoon/0.png" />
+      <img class="balloon" style="position:absolute;top:180px;left:400px;" src="/images/pinkballoon/0.png" />
+      <img class="balloon" style="position:absolute;top:190px;left:250px;" src="/images/orangeballoon/0.png" />
+      
+      <img class="balloon" style="position:absolute;top:80px;left:450px;" src="/images/redballoon/0.png" />
+      <img class="balloon" style="position:absolute;top:80px;left:250px;" src="/images/greenballoon/0.png" />
+      <img class="balloon" style="position:absolute;top:80px;left:50px;" src="/images/pinkballoon/0.png" />
+      <img class="balloon" style="position:absolute;top:80px;left:650px;" src="/images/greenballoon/0.png" />
+  	</div>
   	
-  	<p>
-  	 If they haven't fixed it,
-  	 <a href="level_1.5.html">Fix it!</a>
-  	 <br />
-  	 If they have fixed it, then tell them so and give them a link to the next puzzle.
-  	</p>
+    <a id="backButton" class="speechBack" href="level_1.3.html"></a>
+
+  	<div style="position:absolute;top:20px;left:820px;background-color:white;padding:30px;padding-bottom:200px;">
+  	 	 <h2>Scoreboard</h2>
+    	 <div id="scoreboard">
+    	 </div>
+    	 
+    	 <h2>Total</h2>
+    	 <div id="total">
+    	   0
+    	 </div>
+    	 <a style="margin:50px;margin-left:120px;margin-right:0px;" class="fixitbutton" href="level_1.5.html"></a>
+    	 
+  	</div>
+  	
+
 	</body>
 </html>

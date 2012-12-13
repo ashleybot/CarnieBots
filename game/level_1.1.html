@@ -4,7 +4,7 @@
 		<meta charset="utf-8" />
 		<title>Level 1.1</title>
 		
-		<link href="../styles/main.css" rel="stylesheet" />
+		<link href="/styles/main.css" rel="stylesheet" />
 		
 		<script language="JavaScript" type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
 		<script language="JavaScript" type="text/javascript" src="/scripts/plugins/json2.js"></script>
@@ -12,7 +12,17 @@
 		<script language="JavaScript" type="text/javascript" src="/scripts/plugins/jquery.jsoncookie.js"></script>
 		<script language="JavaScript" type="text/javascript" src="/scripts/jquery.score.js"></script>
 		<script language="JavaScript" type="text/javascript" src="/scripts/jquery.balloon.js"></script>
-		<script language="JavaScript" type="text/javascript" src="/scripts/jquery.score.js"></script>
+		<script language="JavaScript" type="text/javascript" src="/scripts/jquery.controlpanel.js"></script>
+		<script>
+		  $(document).ready(function (){
+  		  if (isWin("easy") == "true"){
+    		  var fixItButton = $(".fixitbutton");
+    		  fixItButton.attr('class','speechNext');
+    		  fixItButton.attr('href', "level_1.3.html");
+    		  alert("You fixed it! Yay! Click next to continue.");
+  		  }
+		  });
+		</script>
 	</head>
 	<body id="balloonDarts">
   	<h2>Ba-Loon-ey Darts!</h2> 
@@ -39,6 +49,8 @@
       <img class="balloon" style="position:absolute;top:80px;left:50px;" src="/images/yellowballoon/0.png" />
       <img class="balloon" style="position:absolute;top:80px;left:650px;" src="/images/redballoon/0.png" />
   	</div>
+  	
+    <a id="backButton" class="speechBack" href="level_1.0.html"></a>
 
   	<div style="position:absolute;top:20px;left:820px;background-color:white;padding:30px;padding-bottom:200px;">
   	 	 <h2>Scoreboard</h2>
@@ -52,11 +64,7 @@
     	 <a style="margin:50px;margin-left:120px;margin-right:0px;" class="fixitbutton" href="level_1.2.html"></a>
     	 
   	</div>
-  	<p>
-  	 If not fixed
-  	 <a href="level_1.2.html">Fix it!</a>
-  	 <br />
-  	 If fixed, tell the player they fixed it, then redirect to intro harder round 1.3 where there is an "uh oh!"
-  	</p>
+  	
+
 	</body>
 </html>
