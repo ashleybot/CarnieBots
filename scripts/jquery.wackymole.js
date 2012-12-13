@@ -1,13 +1,15 @@
-// setup; make some variables available to the full scope
 // Keeps this code in its own scope
 (function () {
 
-  var molePosition; // current popped out mole (1 indexed)
-  var currentMolePositionIndex = 0; // current array position of the popped out mole (0 indexed)
+  // setup; make some variables available to the full scope
+
   var currentScore = 0; // current player's score
-  var molePositions = [2, 1, 0, 3, 4]; // controls order of positions the mole chooses to pop out from
+
+  var molePosition; // current popped out mole's position
+  var molePositionsSequence = [2, 1, 0, 3, 4]; // controls order of positions the mole chooses to pop out from
+  var currentMolePositionIndex = 0; // current index of the molePositionsSequence array being used to control order of mole positions
+
   var isReset = true; // controls animations and cleans up afterward
-  //var moleCorrect = false;
 
   $(document).ready(function () {
     $('body').keypress(function (event) {
@@ -35,16 +37,16 @@
     DrawScore();
   });
 
-  // Choose a new mole position; uses the array 'molePositions' and goes in sequence.  After the last index in the
+  // Choose a new mole position; uses the array 'molePositionsSequence' and goes in sequence.  After the last index in the
   // array, this wraps around to the first element in the array and starts over
   function moveMole() {
-    molePosition = molePositions[currentMolePositionIndex];
+    molePosition = molePositionsSequence[currentMolePositionIndex];
     console.log("Array index: " + molePosition);
     animateMole(molePosition);
 
-    console.log("Positions: " + molePositions.length);
-    if ((molePositions.length - 1) > currentMolePositionIndex) {
-      console.log("Advancing to position " + (currentMolePositionIndex + 1) + " out of " + molePositions.length);
+    console.log("Positions: " + molePositionsSequence.length);
+    if ((molePositionsSequence.length - 1) > currentMolePositionIndex) {
+      console.log("Advancing to position " + (currentMolePositionIndex + 1) + " out of " + molePositionsSequence.length);
       currentMolePositionIndex++;
     }
     else {
@@ -54,17 +56,20 @@
     return molePosition;
   }
 
-  // animates the specified mole (mole numbers are 1-indexed!)
+  // animates the specified mole
   function animateMole(moleNumber, isSuccess) {
-    var moleToAnimate = $("#mole" + (moleNumber + 1));
+    var moleToAnimate = $("#mole" + (moleNumber + 1)); //Mole numbers are 1-indexed so add one to the index to get the appropriate mole
+
+    // make sure the correct image is used
     moleToAnimate.attr('src', "images/wackyMole/mole.png");
-    if (moleToAnimate.hasClass('topRowMoleIn')) {
+
+    if (moleToAnimate.hasClass('topRowMoleIn')) { // this case handles popping a new top row mole out of a hole
       moleToAnimate.toggleClass('topRowMoleOut', true, 1000).toggleClass('topRowMoleIn', false, 1000);
     }
-    else if (moleToAnimate.hasClass('bottomRowMoleIn')) {
+    else if (moleToAnimate.hasClass('bottomRowMoleIn')) { // this case handles popping a new bottom row mole out of a hole
       moleToAnimate.toggleClass('bottomRowMoleOut', true, 1000).toggleClass('bottomRowMoleIn', false, 1000);
     }
-    else {
+    else { // this case handles moles going back down into their holes
       var i = 0, max = 2;
       var slowloop = function () {
         if (i < max && isSuccess) {
@@ -89,26 +94,18 @@
       };
       slowloop();
     }
-
-    /*  if (moleToAnimate.hasClass('topRowMoleOut') || moleToAnimate.hasClass('topRowMoleIn')) {
-        moleToAnimate.toggleClass('topRowMoleOut', 1000).toggleClass('topRowMoleIn', 1000);
-      }
-      else{
-        moleToAnimate.toggleClass('bottomRowMoleOut', 1000).toggleClass('bottomRowMoleIn', 1000);
-      }  */
   }
 
-  // animates the mallet and dispatches actions for whether or not the player's entry was correct
-
+  // handles animation of moles when whacked by the mallet
   function changeState(mole, index) {
     mole.attr('src', "images/wackyMole/mole" + index + ".png");
   }
 
+  // animates the mallet and dispatches actions for whether or not the player's entry was correct
   function whack(whackyGuess) {
-    // var whackyGuess = ($('#whackyGuess').val());
-
     var guessIsCorrect = (whackyGuess == molePosition);
 
+    // handles the 'top' and 'z-index' of the mallet for better layering effect
     if (isEven(whackyGuess)) {
       $('#mallet').addClass('topRowWhack');
     }
@@ -116,21 +113,23 @@
       $('#mallet').addClass('bottomRowWhack');
     }
 
+    // animate the mallet
     $('#mallet').toggleClass('mallet' + whackyGuess, 500).promise().done(function () {
       $('#mallet').addClass('malletRotated');
+      // this instructs javascript to wait, essentially because we are using CSS3 to rotate the mallet and CSS3 isn't in the execution path of our javascript
+      // putting this code in the promise event of the previous animation allows the previous animation to complete, and gives CSS3 time to rotate the mallet
+      // so the mole doesn't flatten early and the score isn't incremented too early
       setTimeout(animateMole(molePosition, guessIsCorrect), 1000);
+
+      if (guessIsCorrect) {
+        currentScore++;
+        DrawScore();
+      }
+      else {
+        alert("Ha ha! You missed! You chose hole number " + whackyGuess +
+            ", but I'm not in that hole!")
+      }
     })
-
-    if (guessIsCorrect) {
-      currentScore++;
-      DrawScore();
-    }
-    else {
-      alert("Ha ha! You missed! You chose hole number " + whackyGuess +
-          ", but I'm not in that hole!")
-    }
-
-
 
     setTimeout(reset, 1500);
 
@@ -148,6 +147,7 @@
     return (n % 2 == 0);
   }
 
+  // uses images for numerals to generate HTML for the score container div
   function DrawScore() {
     var scoreContainer = $('#scoreContainer');
     scoreContainer.empty();
