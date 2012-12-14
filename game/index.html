@@ -47,6 +47,7 @@
     		    }
     		    else if (index == 5){
       		    $(this).attr("href","level_1.0.html");
+      		    $("body").fadeOut(1000, redirectPage);
     		    }
   		    });
 		  });
@@ -54,6 +55,10 @@
 		  function getIndex(src){
         return src.match(/\d+/);
       }
+		  
+		  function redirectPage(){
+  		  window.location("level_1.0.html");
+		  }
 		</script>
 	</head>
 	<body id="intro">

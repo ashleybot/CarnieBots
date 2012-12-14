@@ -7,19 +7,30 @@
 		<link href="/styles/main.css" rel="stylesheet" />
 		
 		<script language="JavaScript" type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 		<script language="JavaScript" type="text/javascript" src="/scripts/plugins/json2.js"></script>
 		<script language="JavaScript" type="text/javascript" src="/scripts/plugins/jquery.cookie.js"></script>
 		<script language="JavaScript" type="text/javascript" src="/scripts/plugins/jquery.jsoncookie.js"></script>
 		<script language="JavaScript" type="text/javascript" src="/scripts/jquery.score.js"></script>
 		<script language="JavaScript" type="text/javascript" src="/scripts/jquery.balloon.js"></script>
 		<script language="JavaScript" type="text/javascript" src="/scripts/jquery.controlpanel.js"></script>
+		<script language="JavaScript" type="text/javascript" src="/scripts/jquery.prizes.js"></script>
 		<script>
 		  $(document).ready(function (){
+		    $( "#dialog" ).dialog({
+            autoOpen: false,
+            show: "blind",
+            hide: "explode",
+            modal: true
+        });
   		  if (isWin("easy") == "true"){
     		  var fixItButton = $(".fixitbutton");
     		  fixItButton.attr('class','speechNext');
     		  fixItButton.attr('href', "level_1.3.html");
-    		  alert("You fixed it! Yay! Click next to continue.");
+    		  
+    		  var filename = getNewPrize();
+    		  $("#prizeImage").attr('src','/images/prizes/' + filename);
+    		  $( "#dialog" ).dialog( "open" );
   		  }
 		  });
 		</script>
@@ -52,7 +63,7 @@
   	
     <a id="backButton" class="speechBack" href="level_1.0.html"></a>
 
-  	<div style="position:absolute;top:20px;left:820px;background-color:white;padding:30px;padding-bottom:200px;">
+  	<div style="position:absolute;top:20px;left:830px;background-color:white;padding:30px;padding-bottom:200px;">
   	 	 <h2>Scoreboard</h2>
     	 <div id="scoreboard">
     	 </div>
@@ -65,6 +76,11 @@
     	 
   	</div>
   	
-
+  	<div id="dialog" title="Yay!">
+      <p>
+        You fixed the robot so you get a prize! Click it to store it!
+      </p>
+      <a id="prizeLink" href="prize.html"><img id="prizeImage" src="" /></a>
+    </div>
 	</body>
 </html>

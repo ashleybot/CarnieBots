@@ -22,6 +22,12 @@ body{
   background: url("/images/backgrounds/field.png");
 }
 
+#prizes {
+  background: url("/images/backgrounds/prize_booth_empty.png") no-repeat;
+  background-size: 1100px;
+  background-color: #5dd660;
+}
+
 img.speechBubbles{
   background: url("/images/characters/BalloonDartsSpeechBubbles.png") 0 0;
   width: 300px;
@@ -126,4 +132,13 @@ img.speechBubbles{
   padding-top: 20px;
   padding-left: 30px;
   font-size: 1.7em;
+}
+
+#dialog, .ui-dialog {
+  background-color: white;
+  padding: 50px;
+}
+
+.ui-dialog-titlebar-close {
+  display: none;
 }

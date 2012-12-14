@@ -9,6 +9,7 @@
 		<script language="JavaScript" type="text/javascript" src="/scripts/plugins/jquery.cookie.js"></script>
 		<script language="JavaScript" type="text/javascript" src="/scripts/plugins/jquery.jsoncookie.js"></script>
 		<script language="JavaScript" type="text/javascript" src="/scripts/jquery.score.js"></script>
+		<script language="JavaScript" type="text/javascript" src="/scripts/jquery.prizes.js"></script>
 		<script>
 		  $(document).ready(function(){
   		  
@@ -16,6 +17,7 @@
   		  $("#new").click(function (){
     		  clearBalloonScores();
     		  resetCompletedLevels();
+    		  clearPrizes();
     		  window.location.href = "game/index.html";
   		  });
   		  
