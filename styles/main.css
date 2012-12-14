@@ -142,3 +142,23 @@ img.speechBubbles{
 .ui-dialog-titlebar-close {
   display: none;
 }
+
+#lockers{
+  width: 240px;
+  margin: 0px;
+}
+
+#lockers li{
+  list-style: none;
+  width: 20px;
+  float:left;
+  display:block;
+  border: 1px solid black;
+  padding: 3px;
+  margin: 0px;
+}
+
+#lockers li:hover{
+  background-color: yellow;
+  cursor: hand;
+}

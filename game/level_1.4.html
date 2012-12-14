@@ -7,19 +7,32 @@
 		<link href="/styles/main.css" rel="stylesheet" />
 		
 		<script language="JavaScript" type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 		<script language="JavaScript" type="text/javascript" src="/scripts/plugins/json2.js"></script>
 		<script language="JavaScript" type="text/javascript" src="/scripts/plugins/jquery.cookie.js"></script>
 		<script language="JavaScript" type="text/javascript" src="/scripts/plugins/jquery.jsoncookie.js"></script>
 		<script language="JavaScript" type="text/javascript" src="/scripts/jquery.score.js"></script>
 		<script language="JavaScript" type="text/javascript" src="/scripts/jquery.balloon.js"></script>
 		<script language="JavaScript" type="text/javascript" src="/scripts/jquery.controlpanel.js"></script>
+		<script language="JavaScript" type="text/javascript" src="/scripts/jquery.prizes.js"></script>
 		<script>
 		  $(document).ready(function (){
+		    $( "#dialog" ).dialog({
+            autoOpen: false,
+            show: "blind",
+            hide: "explode",
+            modal: true
+        });
   		  if (isWin("hard") == "true"){
     		  var fixItButton = $(".fixitbutton");
     		  fixItButton.attr('class','speechNext');
-    		  fixItButton.attr('href', "/wackymole.html");
-    		  alert("You fixed it! Yay! Click next to continue.");
+    		  fixItButton.attr('href', "wackymole.html");
+    		  
+    		  if (canGetPrizes("hardBalloon")==true){
+      		  var filename = getNewPrize();
+      		  $("#prizeImage").attr('src','/images/prizes/' + filename);
+    		    $( "#dialog" ).dialog( "open" );
+    		  }
   		  }
 		  });
 		</script>
@@ -66,5 +79,11 @@
   	</div>
   	
 
+  	<div id="dialog" title="Yay!">
+      <p>
+        You won a prize! Click it to store it!
+      </p>
+      <a id="prizeLink" href="prizeStorage.html"><img style="width:240px" id="prizeImage" src="" /></a>
+    </div>
 	</body>
 </html>

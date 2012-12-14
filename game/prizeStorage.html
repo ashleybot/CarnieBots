@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Level 1.1</title>
+		
+		<link href="/styles/main.css" rel="stylesheet" />
+		
+		<script language="JavaScript" type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+		<script language="JavaScript" type="text/javascript" src="/scripts/plugins/json2.js"></script>
+		<script language="JavaScript" type="text/javascript" src="/scripts/plugins/jquery.cookie.js"></script>
+		<script language="JavaScript" type="text/javascript" src="/scripts/plugins/jquery.jsoncookie.js"></script>
+		<script language="JavaScript" type="text/javascript" src="/scripts/jquery.prizes.js"></script>
+		
+    <script>
+      $(document).ready(function (){
+		    $( "#dialog" ).dialog({
+            autoOpen: false,
+            show: "blind",
+            hide: "explode",
+            modal: true
+        });
+    		$( "#dialog" ).dialog( "open" );
+    		
+    		$("#currentPrizeImage").attr("src", "/images/prizes/" + getCurrentPrize());
+    		var nextURL = "level_1.2";
+    		if ($.cookie("EasyBalloonPrizes") == "1"){
+      		nextURL = "level_1.3.html";
+    		}
+    		else{
+      		nextURL = "/wackymole.html";
+    		}
+    		$("#nextButton").attr("href",nextURL);
+    		
+    		$("#lockers li").click(function (){
+    		  var listItem = $(this);
+    		  storeCurrentPrize(listItem.text());
+    		  $("#dialog").dialog("close");
+    		});
+    		
+		  });
+    </script>
+  </head>
+	<body id="prizes">
+	 <img id="zeroImg" />
+	 <img id="oneImg" />
+	 <img id="twoImg" />
+	 <img id="threeImg" />
+	 <img id="fourImg" />
+	 <img id="fiveImg" />
+	 <a id="nextButton" class="speechNext" style="position:relative;top:500px;left:880px;" href="#"></a>
+	 <p style="display:block;position:relative;top:650px;left:720px;">
+	   Go to next puzzle!
+	 </p>
+	 <div id="dialog" title="Store your prize!">
+      <p>
+        Where would you like to store your prize? Click on a number.
+      </p>
+      <img id="currentPrizeImage" style="width:240px" src="" />
+      <ul id="lockers">
+        <li>0</li>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+      </ul>
+    </div>
+	</body>
+</html>
