@@ -11,16 +11,73 @@
 		<script language="JavaScript" type="text/javascript" src="/scripts/plugins/jquery.cookie.js"></script>
 		<script language="JavaScript" type="text/javascript" src="/scripts/plugins/jquery.jsoncookie.js"></script>
 		<script language="JavaScript" type="text/javascript" src="/scripts/jquery.score.js"></script>
+		<script>
+		  var currentSpeechId = "#speech1";
+		  $(document).ready(function(){
+  		    for(var i=2;i<12;i++){
+  		      var speechBubble = $("#speech" + i);
+    		    speechBubble.css("display","none");
+  		    }
+  		    $("#backButton").click(function(){
+    		    var speechBubble = $(currentSpeechId);
+    		    var index = parseInt(getIndex(currentSpeechId)) - 1;
+    		    // decrease id
+    		    if (index > 0){
+    		      speechBubble.css("display","none");
+    		      currentSpeechId = "#speech" + index;
+    		      console.log(currentSpeechId);
+    		      var nextBubble = $(currentSpeechId);
+    		      nextBubble.css("display","block");
+    		    }
+    		    else if (index == 0){
+      		    $(this).attr("href","/index.html");
+    		    }
+
+  		    });
+
+  		    $("#nextButton").click(function(){
+    		    var speechBubble = $(currentSpeechId);
+    		    var index = parseInt(getIndex(currentSpeechId)) + 1;
+    		    // increase id
+    		    if (index < 5){
+    		      speechBubble.css("display","none");
+    		      currentSpeechId = "#speech" + index;
+    		      var nextBubble = $(currentSpeechId);
+    		      nextBubble.css("display","block");
+    		    }
+    		    else if (index == 5){
+      		    $(this).attr("href","level_1.0.html");
+    		    }
+  		    });
+		  });
+		  
+		  function getIndex(src){
+        return src.match(/\d+/);
+      }
+		</script>
 	</head>
-	<body>
-  	<h2>Welcome to CarnieBots!</h2> 
-  	
-  	<p>This is where some fun text goes!</p>
-  	
-  	<p>
-  	 <a href="level_1.0.html">Enter the Carnival</a>
-  	 <br/>
-  	 Show links to completed levels here.
+	<body id="intro">
+	 <div style="margin-left:auto;margin-right:auto;width:700px;">
+  	<h2>Welcome to the Code Carnival!</h2> 
+  	<img style="top:300px;position:absolute;" src="/images/characters/avvie.png" />
+
+  	<p id="speech1" class="backgroundSpeech">
+  	 I'm so glad you're here!
   	</p>
+  	<p id="speech2" class="backgroundSpeech">
+    	Ralph the Rampaging RepairBot has taken over the carnival!
+    </p>
+    <p id="speech3" class="backgroundSpeech">
+      He's changed all of the games into strange puzzles that we can't solve.
+    </p>
+    <p id="speech4" class="backgroundSpeech">
+      I hear you're really good at puzzles. Please help us!
+    </p>
+  	
+  	<div style="width:400px;position:relative;left:300px;">
+    	 <a id="backButton" class="speechBack" href="#"></a>
+    	 <a id="nextButton" class="speechNext" style="position:relative;top:-135px;left:180px;" href="#"></a>
+  	 </div>
+	</div>
 	</body>
 </html>

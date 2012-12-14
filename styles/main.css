@@ -1,4 +1,24 @@
+@import url(http://fonts.googleapis.com/css?family=Walter+Turncoat);
+
+body{
+  font-family: 'Walter Turncoat', cursive;
+}
+
 #balloonDarts{
+  background: url("/images/backgrounds/field.png");
+}
+
+#titlescreen {
+  background: url("/images/backgrounds/titlescreen.png");
+}
+
+#new {
+  left: 480px;
+  top: 700px;
+  position: absolute;
+}
+
+#intro{
   background: url("/images/backgrounds/field.png");
 }
 
@@ -85,8 +105,6 @@ img.speechBubbles{
   height: 100px;
   display: block;
   position: absolute;
-  top: 550px;
-  left: 500px;
   
 }
 
@@ -96,4 +114,16 @@ img.speechBubbles{
   height: 100px;
   display: block;
   position: absolute;
+}
+
+.backgroundSpeech{
+  background: url("/images/characters/backgroundSpeechBubble.png") no-repeat;
+  width: 260px;
+  height: 340px;
+  display: block;
+  left: 300px;
+  position:relative;
+  padding-top: 20px;
+  padding-left: 30px;
+  font-size: 1.7em;
 }
