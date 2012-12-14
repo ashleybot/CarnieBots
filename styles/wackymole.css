@@ -129,3 +129,13 @@
 #mole5 {
   left: 1045px;
 }
+
+#introMole{
+  position: absolute;
+  left: 1700px;
+  top: 500px;
+}
+
+img{
+	zoom: .95;
+}
