@@ -2,8 +2,25 @@ var prizeFileNames = ["sunglasses.png","basketball.png","scotty.png","pinguino.p
 
 function canGetPrizes(level){
   // easyBalloon, hardBalloon
-  
-  
+  var count = 0;
+  if ("easyBalloon"){
+    count = parseInt($.cookie("EasyBalloonPrizes"));
+    if (count < 4){
+      count++;
+      $.cookie("EasyBalloonPrizes", count, {path: '/game'});
+      return true;
+    }
+  }
+  else if ("hardBalloon"){
+    count = parseInt($.cookie("HardBalloonPrizes"));
+    if (count < 4){
+      count++;
+      $.cookie("HardBalloonPrizes", count, {path: '/game'});
+      return true;
+    }
+
+  }
+  return false;
 }
 
 function storePrize(filename,index){

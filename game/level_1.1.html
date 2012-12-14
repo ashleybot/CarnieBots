@@ -28,9 +28,11 @@
     		  fixItButton.attr('class','speechNext');
     		  fixItButton.attr('href', "level_1.3.html");
     		  
-    		  var filename = getNewPrize();
-    		  $("#prizeImage").attr('src','/images/prizes/' + filename);
-    		  $( "#dialog" ).dialog( "open" );
+    		  if (canGetPrizes("easyBalloon")==true){
+      		  var filename = getNewPrize();
+      		  $("#prizeImage").attr('src','/images/prizes/' + filename);
+    		    $( "#dialog" ).dialog( "open" );
+    		  }
   		  }
 		  });
 		</script>
